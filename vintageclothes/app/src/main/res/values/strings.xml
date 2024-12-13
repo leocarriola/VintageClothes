@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Vintage Clothes</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_password">Password</string>
+    <string name="text_enter">Entrar</string>
+    <string name="text_save">Guardar</string>
+    <string name="text_register">Registar</string>
+</resources>

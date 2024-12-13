@@ -1,0 +1,50 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp">
+
+    <!-- Caixa com os itens -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/rounded_background"
+        android:padding="10dp"
+        android:layout_marginTop="100dp"
+        android:elevation="4dp">
+
+        <!-- Nome -->
+        <TextView
+            android:id="@+id/textNome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nome: " />
+
+        <!-- Telefone -->
+        <TextView
+            android:id="@+id/texttelefone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Telefone: " />
+
+        <!-- Morada -->
+        <TextView
+            android:id="@+id/textMorada"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Morada: " />
+
+    </LinearLayout>
+
+    <!-- Botão Logout -->
+    <Button
+        android:id="@+id/button_logout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Logout"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="450dp"
+        android:layout_marginBottom="10dp" />
+</LinearLayout>
