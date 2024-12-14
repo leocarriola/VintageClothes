@@ -10,9 +10,12 @@ import pm.login.databinding.ActivityBaseBinding
 import pm.login.fragments.CarrinhoFragment
 import pm.login.fragments.HomeFragment
 import pm.login.fragments.LojaFragment
+
 import pm.login.fragments.UserFragment
 
 open class BaseActivity : AppCompatActivity() {
+
+
 
     private val binding by lazy {
         ActivityBaseBinding.inflate(layoutInflater)

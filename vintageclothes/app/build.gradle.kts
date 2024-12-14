@@ -46,6 +46,8 @@ dependencies {
     implementation(libs.androidx.foundation.android)
     implementation(libs.androidx.tools.core)
 
+    implementation (libs.glide)
+
 
 
 }

@@ -24,7 +24,7 @@ class UserFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_perfil, container, false)
 
         // Configura o botão de logout
-        val logoutButton = view.findViewById<Button>(R.id.button_logout)
+        val logoutButton = view.findViewById<Button>(R.id.buttonLogout)
         logoutButton.setOnClickListener {
             performLogout()
         }

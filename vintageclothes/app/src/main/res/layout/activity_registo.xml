@@ -1,81 +1,108 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- res/layout/activity_registo.xml -->
-<LinearLayout
+<FrameLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
-    android:background="#D3D3D3"> <!-- Fundo cinza -->
+    android:background="#F5F5F5"> <!-- Fundo cinza claro moderno -->
 
-    <EditText
-        android:id="@+id/editTextNome"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Nome"
-        android:inputType="textPersonName"
-        />
+    <!-- Caixa branca centralizada com efeito de flutuar -->
+    <LinearLayout
+        android:layout_width="354dp"
+        android:layout_height="546dp"
+        android:layout_gravity="center"
+        android:background="@drawable/box_background"
+        android:elevation="12dp"
+        android:orientation="vertical"
+        android:padding="40dp">
 
-    <EditText
-        android:id="@+id/editTextTelefone"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Telefone"
-        android:inputType="phone"
-    />
+        <EditText
+            android:id="@+id/editTextNome"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/edittext_background"
+            android:hint="Nome"
+            android:inputType="textPersonName"
+            android:padding="12dp" />
 
-    <EditText
-        android:id="@+id/editTextEmail"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Email"
-        android:inputType="textEmailAddress"
-       />
+        <EditText
+            android:id="@+id/editTextTelefone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/edittext_background"
+            android:hint="Telefone"
+            android:inputType="phone"
+            android:padding="12dp" />
 
-    <EditText
-        android:id="@+id/editTextMorada"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Morada"
-        android:inputType="text"
-        />
+        <EditText
+            android:id="@+id/editTextEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/edittext_background"
+            android:hint="Email"
+            android:inputType="textEmailAddress"
+            android:padding="12dp" />
 
-    <EditText
-        android:id="@+id/editTextPassword"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Password"
-        android:inputType="textPassword"
-        />
+        <EditText
+            android:id="@+id/editTextMorada"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/edittext_background"
+            android:hint="Morada"
+            android:inputType="text"
+            android:padding="12dp" />
 
-    <EditText
-        android:id="@+id/editTextConfirmPassword"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Confirmar Password"
-        android:inputType="textPassword"/>
+        <EditText
+            android:id="@+id/editTextPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/edittext_background"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:padding="12dp" />
 
+        <EditText
+            android:id="@+id/editTextConfirmPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/edittext_background"
+            android:hint="Confirmar Password"
+            android:inputType="textPassword"
+            android:padding="12dp" />
 
-    <Button
-        android:id="@+id/buttonRegistar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Registrar"/>
+        <Button
+            android:id="@+id/buttonRegistar"
+            android:layout_width="276dp"
+            android:layout_height="67dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/button_background"
+            android:backgroundTint="#000000"
+            android:padding="14dp"
+            android:text="Registrar"
+            android:textColor="#FFFFFF" />
 
-    <TextView
-        android:id="@+id/textViewErro"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textColor="#FF0000"
-        android:visibility="gone"
-        android:text=""/>
+        <TextView
+            android:id="@+id/textViewErro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text=""
+            android:textColor="#FF0000"
+            android:visibility="gone" />
 
-    <TextView
-        android:id="@+id/textViewSuccess"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textColor="#008000"
-        android:visibility="gone"
-        android:text=""/>
-</LinearLayout>
-
+        <TextView
+            android:id="@+id/textViewSuccess"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text=""
+            android:textColor="#008000"
+            android:visibility="gone" />
+    </LinearLayout>
+    </FrameLayout>
