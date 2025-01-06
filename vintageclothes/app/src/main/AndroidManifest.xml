@@ -14,35 +14,28 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Login"
         tools:targetApi="31">
-
+        <activity
+            android:name=".ProductDetailsActivity"
+            android:exported="false" />
         <!-- BaseActivity está configurada mas não é a principal -->
         <activity
             android:name=".BaseActivity"
-            android:exported="false" />
-
-        <!-- MainActivity deve ser a principal -->
+            android:exported="false" /> <!-- MainActivity deve ser a principal -->
         <activity
             android:name=".MainActivity"
-            android:exported="false"/>
+            android:exported="false" />
         <activity
             android:name=".RegistoActivity"
-            android:exported="false"/>
-
-        <!-- SplashActivity (não será editada para o objetivo atual) -->
+            android:exported="true" /> <!-- SplashActivity (não será editada para o objetivo atual) -->
         <activity
             android:name=".SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-
-
-
-
-
     </application>
 
 </manifest>

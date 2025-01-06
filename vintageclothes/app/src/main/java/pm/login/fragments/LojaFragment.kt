@@ -1,12 +1,14 @@
 package pm.login.fragments
 
+import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.android.volley.Request
 import com.android.volley.RequestQueue
@@ -15,6 +17,7 @@ import com.android.volley.toolbox.Volley
 import org.json.JSONArray
 import org.json.JSONException
 import org.json.JSONObject
+import pm.login.ProductDetailsActivity
 import pm.login.Produto
 import pm.login.ProdutoAdapter
 import pm.login.R
@@ -32,30 +35,33 @@ class LojaFragment : Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_loja, container, false)
 
-        // Configura o RecyclerView
+        // Configura o RecyclerView para produtos
         recyclerView = view.findViewById(R.id.recyclerViewProdutos)
-        recyclerView.layoutManager = GridLayoutManager(requireContext(), 2)
+        recyclerView.layoutManager = LinearLayoutManager(requireContext())
 
         // Inicializa a fila de requisições do Volley
         requestQueue = Volley.newRequestQueue(requireContext())
 
+        // Carregar os produtos
         carregarProdutos()
 
         return view
     }
 
     private fun carregarProdutos() {
-        val url = "https://esan-tesp-ds-paw.web.ua.pt/tesp-ds-g31/api/loja.php" // Substitua pela URL da sua API
+        val url = "https://esan-tesp-ds-paw.web.ua.pt/tesp-ds-g31/api/loja.php"
 
-        // Criar um objeto JSON vazio
         val emptyJson = JSONObject()
 
         val request = JsonObjectRequest(
-            Request.Method.GET, url, emptyJson, // Passando o objeto JSON vazio
+            Request.Method.GET, url, emptyJson,
             { response ->
                 try {
                     val produtos = parseProdutos(response)
-                    adapter = ProdutoAdapter(produtos)
+                    adapter = ProdutoAdapter(produtos) { produto ->
+                        // Tratamento de clique no produto
+                        abrirDetalhesProduto(produto)
+                    }
                     recyclerView.adapter = adapter
                 } catch (e: JSONException) {
                     Toast.makeText(requireContext(), "Erro ao carregar produtos: ${e.message}", Toast.LENGTH_LONG).show()
@@ -66,10 +72,8 @@ class LojaFragment : Fragment() {
             }
         )
 
-        // Adiciona a requisição à fila
         requestQueue.add(request)
     }
-
 
     private fun parseProdutos(response: JSONObject): List<Produto> {
         val listaProdutos = mutableListOf<Produto>()
@@ -88,6 +92,17 @@ class LojaFragment : Fragment() {
         }
         return listaProdutos
     }
+
+    private fun abrirDetalhesProduto(produto: Produto) {
+        // Log do ID do produto que está sendo passado
+        Log.d("AbrirDetalhesProduto", "ID do produto: ${produto.idProduto}")
+
+        // Navegar para a tela de detalhes do produto
+        val intent = Intent(requireContext(), ProductDetailsActivity::class.java)
+        intent.putExtra("id_produto", produto.idProduto.toInt())
+        startActivity(intent)
+    }
+
 
     override fun onDestroyView() {
         super.onDestroyView()

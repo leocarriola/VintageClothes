@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="NONE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="94ce44f5-6243-48fa-852d-67d4243b26eb" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/vintageclothes/app/src/main/res/drawable/background_item.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vintageclothes/app/src/main/res/drawable/logo2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vintageclothes/app/src/main/res/drawable/logo3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vintageclothes/app/src/main/res/drawable/menu.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/vintageclothes/app/src/main/res/values-en/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vintageclothes/app/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/vintageclothes/app/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vintageclothes/app/src/main/ic_launcher-playstore.png" beforeDir="false" afterPath="$PROJECT_DIR$/vintageclothes/app/src/main/ic_launcher-playstore.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vintageclothes/app/src/main/java/pm/login/BaseActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/vintageclothes/app/src/main/java/pm/login/BaseActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vintageclothes/app/src/main/java/pm/login/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/vintageclothes/app/src/main/java/pm/login/MainActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vintageclothes/app/src/main/java/pm/login/ProdutoAdapter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/vintageclothes/app/src/main/java/pm/login/ProdutoAdapter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vintageclothes/app/src/main/java/pm/login/fragments/LojaFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/vintageclothes/app/src/main/java/pm/login/fragments/LojaFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vintageclothes/app/src/main/java/pm/login/fragments/UserFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/vintageclothes/app/src/main/java/pm/login/fragments/UserFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vintageclothes/app/src/main/res/layout/activity_splash.xml" beforeDir="false" afterPath="$PROJECT_DIR$/vintageclothes/app/src/main/res/layout/activity_splash.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vintageclothes/app/src/main/res/layout/fragment_loja.xml" beforeDir="false" afterPath="$PROJECT_DIR$/vintageclothes/app/src/main/res/layout/fragment_loja.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vintageclothes/app/src/main/res/layout/fragment_perfil.xml" beforeDir="false" afterPath="$PROJECT_DIR$/vintageclothes/app/src/main/res/layout/fragment_perfil.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vintageclothes/app/src/main/res/layout/item_produto.xml" beforeDir="false" afterPath="$PROJECT_DIR$/vintageclothes/app/src/main/res/layout/item_produto.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vintageclothes/app/src/main/res/menu/bottom_nav_menu.xml" beforeDir="false" afterPath="$PROJECT_DIR$/vintageclothes/app/src/main/res/menu/bottom_nav_menu.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vintageclothes/app/src/main/res/mipmap-hdpi/ic_launcher.webp" beforeDir="false" afterPath="$PROJECT_DIR$/vintageclothes/app/src/main/res/mipmap-hdpi/ic_launcher.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vintageclothes/app/src/main/res/mipmap-hdpi/ic_launcher_foreground.webp" beforeDir="false" afterPath="$PROJECT_DIR$/vintageclothes/app/src/main/res/mipmap-hdpi/ic_launcher_foreground.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vintageclothes/app/src/main/res/mipmap-hdpi/ic_launcher_round.webp" beforeDir="false" afterPath="$PROJECT_DIR$/vintageclothes/app/src/main/res/mipmap-hdpi/ic_launcher_round.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vintageclothes/app/src/main/res/mipmap-mdpi/ic_launcher.webp" beforeDir="false" afterPath="$PROJECT_DIR$/vintageclothes/app/src/main/res/mipmap-mdpi/ic_launcher.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vintageclothes/app/src/main/res/mipmap-mdpi/ic_launcher_foreground.webp" beforeDir="false" afterPath="$PROJECT_DIR$/vintageclothes/app/src/main/res/mipmap-mdpi/ic_launcher_foreground.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vintageclothes/app/src/main/res/mipmap-mdpi/ic_launcher_round.webp" beforeDir="false" afterPath="$PROJECT_DIR$/vintageclothes/app/src/main/res/mipmap-mdpi/ic_launcher_round.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vintageclothes/app/src/main/res/mipmap-xhdpi/ic_launcher.webp" beforeDir="false" afterPath="$PROJECT_DIR$/vintageclothes/app/src/main/res/mipmap-xhdpi/ic_launcher.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vintageclothes/app/src/main/res/mipmap-xhdpi/ic_launcher_foreground.webp" beforeDir="false" afterPath="$PROJECT_DIR$/vintageclothes/app/src/main/res/mipmap-xhdpi/ic_launcher_foreground.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vintageclothes/app/src/main/res/mipmap-xhdpi/ic_launcher_round.webp" beforeDir="false" afterPath="$PROJECT_DIR$/vintageclothes/app/src/main/res/mipmap-xhdpi/ic_launcher_round.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vintageclothes/app/src/main/res/mipmap-xxhdpi/ic_launcher.webp" beforeDir="false" afterPath="$PROJECT_DIR$/vintageclothes/app/src/main/res/mipmap-xxhdpi/ic_launcher.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vintageclothes/app/src/main/res/mipmap-xxhdpi/ic_launcher_foreground.webp" beforeDir="false" afterPath="$PROJECT_DIR$/vintageclothes/app/src/main/res/mipmap-xxhdpi/ic_launcher_foreground.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vintageclothes/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.webp" beforeDir="false" afterPath="$PROJECT_DIR$/vintageclothes/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vintageclothes/app/src/main/res/mipmap-xxxhdpi/ic_launcher.webp" beforeDir="false" afterPath="$PROJECT_DIR$/vintageclothes/app/src/main/res/mipmap-xxxhdpi/ic_launcher.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vintageclothes/app/src/main/res/mipmap-xxxhdpi/ic_launcher_foreground.webp" beforeDir="false" afterPath="$PROJECT_DIR$/vintageclothes/app/src/main/res/mipmap-xxxhdpi/ic_launcher_foreground.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vintageclothes/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.webp" beforeDir="false" afterPath="$PROJECT_DIR$/vintageclothes/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.webp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vintageclothes/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/vintageclothes/app/src/main/res/values/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vintageclothes/gradle/libs.versions.toml" beforeDir="false" afterPath="$PROJECT_DIR$/vintageclothes/gradle/libs.versions.toml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 7
+}</component>
+  <component name="ProjectId" id="2qcIKvMvjrSIPbqp3JRQ3ccLaqS" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.readMode.enableVisualFormatting&quot;: &quot;true&quot;,
+    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/pauli/OneDrive/Documentos/GitHub/VintageClothes/vintageclothes&quot;
+  }
+}</component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="94ce44f5-6243-48fa-852d-67d4243b26eb" name="Changes" comment="" />
+      <created>1734955375413</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1734955375413</updated>
+    </task>
+    <servers />
+  </component>
+</project>

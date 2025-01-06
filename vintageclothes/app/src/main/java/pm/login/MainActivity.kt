@@ -95,6 +95,7 @@ class MainActivity : AppCompatActivity() {
                             val telefone = response.getInt("telefone")
                             val morada = response.getString("morada")
 
+
                             val sharedPref = getSharedPreferences("pmLogin", MODE_PRIVATE)
                             sharedPref.edit().apply {
                                 putBoolean("login", true)

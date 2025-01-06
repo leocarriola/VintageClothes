@@ -8,33 +8,35 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 
-// Data class que representa um produto
-data class Produto(
-    val idProduto: String,
-    val produtoNome: String,
-    val preco: String,
-    val imagem: String?, // URL da imagem do produto
-)
-
-class ProdutoAdapter(
+class ProdutoHomeAdapter(
     private val produtos: List<Produto>,
     private val onItemClick: (Produto) -> Unit // Callback para tratar cliques
-) : RecyclerView.Adapter<ProdutoAdapter.ProdutoViewHolder>() {
+) : RecyclerView.Adapter<ProdutoHomeAdapter.ProdutoViewHolder>() {
 
-    // Defina a URL base para as imagens
+    // URL base para as imagens
     private val baseUrlImagem = "https://esan-tesp-ds-paw.web.ua.pt/tesp-ds-g31/uploads/imagem/"
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProdutoViewHolder {
+        // Infla o layout do item para o RecyclerView
         val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.item_produto, parent, false)
+            .inflate(R.layout.item_produto_home, parent, false)
         return ProdutoViewHolder(view)
     }
 
     override fun onBindViewHolder(holder: ProdutoViewHolder, position: Int) {
         val produto = produtos[position]
 
-        // Defina o nome do produto e preço
-        holder.produtoNome.text = produto.produtoNome
+        // Verifica o comprimento do nome do produto e aplica o truncamento se necessário
+        val nomeProduto = if (produto.produtoNome.length > 6) {
+            produto.produtoNome.substring(0, 15) + "..." // Trunca para 6 caracteres e adiciona "..."
+        } else {
+            produto.produtoNome // Deixa o nome original se tiver 6 ou menos caracteres
+        }
+
+        // Define o nome do produto truncado ou original
+        holder.produtoNome.text = nomeProduto
+
+        // Define o preço do produto
         holder.produtoPreco.text = "${produto.preco} €" // Supondo que o preço seja em euros
 
         // Construir a URL da imagem ou usar uma imagem padrão
@@ -56,10 +58,10 @@ class ProdutoAdapter(
 
     override fun getItemCount(): Int = produtos.size
 
-    // ViewHolder que mantém as referências para os itens do layout
+    // ViewHolder que mantém as referências aos itens do layout
     class ProdutoViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val produtoNome: TextView = itemView.findViewById(R.id.nomeProduto)
-        val produtoPreco: TextView = itemView.findViewById(R.id.precoProduto)
-        val produtoImagem: ImageView = itemView.findViewById(R.id.produtoImage)
+        val produtoNome: TextView = itemView.findViewById(R.id.productName)
+        val produtoPreco: TextView = itemView.findViewById(R.id.productPrice)
+        val produtoImagem: ImageView = itemView.findViewById(R.id.imageView)
     }
 }

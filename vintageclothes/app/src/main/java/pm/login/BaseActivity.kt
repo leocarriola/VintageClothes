@@ -1,7 +1,7 @@
 package pm.login
 
 import android.os.Bundle
-import android.util.Log // Import necessário para usar Log
+import android.util.Log
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment

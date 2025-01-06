@@ -1,6 +1,11 @@
+package pm.login.fragments
+
+import android.annotation.SuppressLint
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.os.Parcel
+import android.os.Parcelable
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -11,8 +16,12 @@ import pm.login.MainActivity
 import pm.login.R
 import java.util.Locale
 
-class UserFragment : Fragment() {
+class UserFragment() : Fragment(), Parcelable {
 
+    constructor(parcel: Parcel) : this() {
+    }
+
+    @SuppressLint("MissingInflatedId")
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -41,10 +50,20 @@ class UserFragment : Fragment() {
         telTextView.text = "Telefone: $telefone" // Atualiza o texto com o telefone
 
         val emailTextView = view.findViewById<TextView>(R.id.textEmail)
-        emailTextView.text = "Email: $email"
+        emailTextView.text = "Email: $email "
 
         val moradaTextView = view.findViewById<TextView>(R.id.textMorada)
-        moradaTextView.text = "Morada: $morada"
+        moradaTextView.text = "Morada: $morada"  // Atualiza o texto com a morada
+
+        // Botão para alterar os dados do usuário
+        val editProfileButton = view.findViewById<Button>(R.id.buttonEditProfile)
+        editProfileButton.setOnClickListener {
+            // Substituir o fragmento atual pelo EditProfileFragment
+            val transaction = requireActivity().supportFragmentManager.beginTransaction()
+            transaction.replace(R.id.fragment_container, UserFragment()) // Certifique-se de que R.id.fragment_container seja o ID correto do contêiner do fragmento
+            transaction.addToBackStack(null) // Adiciona a transação à pilha de retorno
+            transaction.commit()
+        }
 
         // Botão para alternar o idioma
         val languageButton = view.findViewById<Button>(R.id.buttonChangeLanguage)
@@ -87,9 +106,9 @@ class UserFragment : Fragment() {
 
         val config = resources.configuration
         config.setLocale(locale)
-        resources.updateConfiguration(config, resources.displayMetrics)
+        requireContext().createConfigurationContext(config)
 
-        // Salvar a preferência de idioma para persistência
+        // Salvar a preferência do idioma para persistência
         saveLanguagePreference(languageCode)
 
         // Atualizar a interface sem redirecionar para outra tela
@@ -108,5 +127,23 @@ class UserFragment : Fragment() {
         val sharedPref = requireActivity().getSharedPreferences("pmLogin", Context.MODE_PRIVATE)
         val languageCode = sharedPref.getString("language", "pt") // Default é pt
         setLanguage(languageCode ?: "pt")
+    }
+
+    override fun writeToParcel(parcel: Parcel, flags: Int) {
+
+    }
+
+    override fun describeContents(): Int {
+        return 0
+    }
+
+    companion object CREATOR : Parcelable.Creator<UserFragment> {
+        override fun createFromParcel(parcel: Parcel): UserFragment {
+            return UserFragment(parcel)
+        }
+
+        override fun newArray(size: Int): Array<UserFragment?> {
+            return arrayOfNulls(size)
+        }
     }
 }

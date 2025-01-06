@@ -6,6 +6,7 @@
     android:gravity="center"
     android:background="#FAFAFA">
 
+    <!-- Título ou mensagem de boas-vindas -->
     <TextView
         android:id="@+id/home_text"
         android:layout_width="wrap_content"
@@ -13,6 +14,20 @@
         android:text="Bem-vindo ao HomeFragment!"
         android:textSize="20sp"
         android:textColor="#000000"
-        android:padding="16dp" />
+        android:padding="16dp"
+        android:gravity="center" />
+
+    <!-- RecyclerView para listar os produtos -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewProdutos"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:layout_weight="1"
+        android:padding="8dp"
+        android:clipToPadding="false"
+        android:scrollbars="vertical" />
 
 </LinearLayout>
+

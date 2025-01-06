@@ -1,97 +1,107 @@
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="16dp"
-    android:background="#f5f5f5">
+    android:padding="16dp">
 
     <!-- Imagem no topo -->
     <ImageView
-        android:id="@+id/imageTopo"
+        android:id="@+id/imageView2"
         android:layout_width="match_parent"
-        android:layout_height="214dp"
-        android:layout_marginBottom="20dp"
-        android:scaleType="centerCrop"
-        android:src="@drawable/vc" />
+        android:layout_height="150dp"
+        app:srcCompat="@drawable/logo2"
+        android:layout_marginBottom="16dp"
+        android:scaleType="centerInside" />
 
-    <!-- Caixa flutuante -->
-    <androidx.cardview.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        app:cardCornerRadius="12dp"
-        app:cardElevation="6dp">
+    <!-- Dados pessoais com fundo branco e bordas arredondadas -->
 
-        <!-- Conteúdo da caixa -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="16dp">
-
-            <!-- Nome do Utilizador -->
-            <TextView
-                android:id="@+id/textNome"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                android:gravity="center"
-                android:text="Nome do Utilizador"
-                android:textSize="22sp"
-                android:textStyle="bold" />
-
-            <!-- Seção de Dados Pessoais -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:text="Dados Pessoais"
-                android:textSize="18sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:id="@+id/textEmail"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:text="Email: exemplo@email.com"
-                android:textSize="16sp" />
-
-            <TextView
-                android:id="@+id/texttelefone"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:text="Telefone: 123456789"
-                android:textSize="16sp" />
-
-            <TextView
-                android:id="@+id/textMorada"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:text="Endereço: Rua Exemplo, 123"
-                android:textSize="16sp" />
-
-        </LinearLayout>
-    </androidx.cardview.widget.CardView>
-
-    <!-- Botão de Logout fora da caixa -->
-    <Button
-        android:id="@+id/buttonLogout"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="290dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="120dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/rounded_background"
+        android:elevation="4dp"
+        android:minHeight="140dp"
+        android:orientation="vertical"
+        android:padding="8dp">
 
-        android:text="Logout"
-        android:textColor="@android:color/white"
-        android:textSize="14sp"
-        android:textStyle="bold"
-        android:paddingHorizontal="16dp"
-        android:paddingVertical="8dp"
-        />
+        <!-- Nome do usuário em negrito, centralizado -->
+        <TextView
+            android:id="@+id/textNome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:gravity="center"
+            android:text="Nome do Usuário"
+            android:textStyle="bold" />
 
+        <!-- Outras informações -->
+        <TextView
+            android:id="@+id/textTelefone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="2dp"
+            android:text="Telefone" />
+
+        <TextView
+            android:id="@+id/textEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="2dp"
+            android:text="Email" />
+
+        <TextView
+            android:id="@+id/textMorada"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="Morada" />
+    </LinearLayout>
+
+
+    <!-- Container para os botões, para centralizar -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="160dp">
+
+        <!-- Botão para alterar dados -->
+        <Button
+            android:id="@+id/buttonEditProfile"
+            android:layout_width="296dp"
+            android:layout_height="48dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/button_style"
+            android:text="Alterar Dados"
+            android:textColor="#FFFFFF" />
+
+
+        <!-- Botão para mudar idioma -->
+        <Button
+            android:id="@+id/buttonChangeLanguage"
+            android:layout_width="296dp"
+            android:layout_height="48dp"
+            android:text="Mudar Idioma"
+            android:textColor="#FFFFFF"
+            android:background="@drawable/button_style"
+            android:backgroundTint="#000000"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Botão de logout -->
+        <Button
+            android:id="@+id/buttonLogout"
+            android:layout_width="296dp"
+            android:layout_height="48dp"
+            android:background="@drawable/button_style"
+            android:backgroundTint="#000000"
+            android:text="Logout"
+            android:textColor="#FFFFFF" />
+
+    </LinearLayout>
 </LinearLayout>

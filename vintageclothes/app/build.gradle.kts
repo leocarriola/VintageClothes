@@ -47,7 +47,7 @@ dependencies {
     implementation(libs.androidx.tools.core)
 
     implementation (libs.glide)
-
+    implementation(libs.androidx.junit.ktx)
 
 
 }

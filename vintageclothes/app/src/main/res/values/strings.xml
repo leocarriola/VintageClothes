@@ -1,8 +1,16 @@
 <resources>
     <string name="app_name">Vintage Clothes</string>
-    <string name="hint_email">Email</string>
-    <string name="hint_password">Password</string>
+    <string name="hint_email" translatable="false">Email</string>
+    <string name="hint_password" translatable="false">Password</string>
     <string name="text_enter">Entrar</string>
     <string name="text_save">Guardar</string>
     <string name="text_register">Registar</string>
+    <string name="text_loja">Loja</string>
+    <string name="text_carrinho">Carrinho</string>
+    <string name="text_perfil">Perfil</string>
+    <string name="text_início">Início</string>
+    <string name="text_dadospessoais">Dados Pessoais</string>
+    <string name="text_telefone">Telefone</string>
+    <string name="text_morada">Morada</string>
+    <string name="hint_logout" translatable="false">Logout</string>
 </resources>

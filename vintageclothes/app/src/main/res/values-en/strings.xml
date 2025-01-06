@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Vintage Clothes</string>
+    <string name="text_enter">Enter</string>
+    <string name="text_save">Save</string>
+    <string name="text_register">Register</string>
+    <string name="text_loja">Shop</string>
+    <string name="text_carrinho">Cart</string>
+    <string name="text_perfil">Profile</string>
+    <string name="text_início">Home</string>
+    <string name="text_dadospessoais">" Personal data"</string>
+    <string name="text_telefone">Telephone</string>
+    <string name="text_morada">Household</string>
+</resources>
