@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
 import androidx.fragment.app.Fragment
+import pm.login.Editar_Perfil
 import pm.login.MainActivity
 import pm.login.R
 import java.util.Locale
@@ -26,25 +27,33 @@ class UserFragment : Fragment() {
             performLogout()
         }
 
+        // Configura o botão de editar
+        val buttonEditProfileButton = view.findViewById<Button>(R.id.buttonEditProfile)
+        buttonEditProfileButton.setOnClickListener {
+            val intent = Intent(requireContext(), Editar_Perfil::class.java)
+            startActivity(intent)
+        }
+
         // Recupera as informações do usuário a partir das SharedPreferences
         val sharedPref = requireActivity().getSharedPreferences("pmLogin", Context.MODE_PRIVATE)
-        val userName = sharedPref.getString("nome", "Usuário não encontrado") ?: "Usuário não encontrado"
+        val userName = sharedPref.getString("nome", "User não encontrado") ?: "Usuário não encontrado"
         val telefone = sharedPref.getInt("telefone", 123)
         val morada = sharedPref.getString("morada", "Morada não encontrada") ?: "Morada não encontrada"
         val email = sharedPref.getString("email", "Email não encontrado") ?: "Email não encontrado"
 
-        // Atualiza o TextView com o nome do usuário
+        // Atualiza os TextViews com as informações
         val nameTextView = view.findViewById<TextView>(R.id.textNome)
-        nameTextView.text = "$userName"
+        nameTextView.text = userName
 
         val telTextView = view.findViewById<TextView>(R.id.textTelefone)
-        telTextView.text = "Telefone: $telefone" // Atualiza o texto com o telefone
+        telTextView.text = "${getString(R.string.text_telefone)}: $telefone"
 
         val emailTextView = view.findViewById<TextView>(R.id.textEmail)
         emailTextView.text = "Email: $email"
 
         val moradaTextView = view.findViewById<TextView>(R.id.textMorada)
-        moradaTextView.text = "Morada: $morada"
+        moradaTextView.text = "${getString(R.string.text_morada)}: $morada"
+
 
         // Botão para alternar o idioma
         val languageButton = view.findViewById<Button>(R.id.buttonChangeLanguage)

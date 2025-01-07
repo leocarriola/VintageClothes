@@ -137,7 +137,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun navigateToFragment(fragment: Fragment) {
         supportFragmentManager.beginTransaction()
-            .replace(R.id.fragment_container, fragment)
+            .replace(R.id.content_frame, fragment)
             .commitAllowingStateLoss()
     }
 }

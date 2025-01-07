@@ -5,6 +5,7 @@
     <string name="text_enter">Entrar</string>
     <string name="text_save">Guardar</string>
     <string name="text_register">Registar</string>
+    <string name="text_bemvindo">Bem-Vindo</string>
     <string name="text_loja">Loja</string>
     <string name="text_carrinho">Carrinho</string>
     <string name="text_perfil">Perfil</string>
@@ -12,5 +13,7 @@
     <string name="text_dadospessoais">Dados Pessoais</string>
     <string name="text_telefone">Telefone</string>
     <string name="text_morada">Morada</string>
+    <string name="text_idioma">Mudar idioma</string>
+    <string name="text_produtos">Os nossos produtos</string>
     <string name="hint_logout" translatable="false">Logout</string>
 </resources>

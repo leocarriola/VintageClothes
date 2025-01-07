@@ -44,7 +44,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="2dp"
-            android:text="Telefone" />
+            android:text="@string/text_telefone" />
 
         <TextView
             android:id="@+id/textEmail"
@@ -54,11 +54,12 @@
             android:text="Email" />
 
         <TextView
+
             android:id="@+id/textMorada"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
-            android:text="Morada" />
+            android:text="@string/text_morada" />
     </LinearLayout>
 
 
@@ -87,7 +88,7 @@
             android:id="@+id/buttonChangeLanguage"
             android:layout_width="296dp"
             android:layout_height="48dp"
-            android:text="Mudar Idioma"
+            android:text="@string/text_idioma"
             android:textColor="#FFFFFF"
             android:background="@drawable/button_style"
             android:backgroundTint="#000000"

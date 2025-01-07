@@ -44,7 +44,7 @@ class HomeFragment : Fragment() {
         val welcomeTextView = view.findViewById<TextView>(R.id.home_text)
         val sharedPref = requireActivity().getSharedPreferences("pmLogin", Context.MODE_PRIVATE)
         val userName = sharedPref.getString("nome", "User não encontrado") ?: "User não encontrado"
-        welcomeTextView.text = "Bem-vindo, $userName!"
+        welcomeTextView.text = "${getString(R.string.text_bemvindo)}: $userName"
 
         // Inicializa a fila de requisições do Volley
         requestQueue = Volley.newRequestQueue(requireContext())

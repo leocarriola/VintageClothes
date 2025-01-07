@@ -10,5 +10,8 @@
     <string name="text_início">Home</string>
     <string name="text_dadospessoais">" Personal data"</string>
     <string name="text_telefone">Telephone</string>
+    <string name="text_idioma">Change language</string>
+    <string name="text_produtos">Our products</string>
+    <string name="text_bemvindo">Welcome</string>
     <string name="text_morada">Household</string>
 </resources>

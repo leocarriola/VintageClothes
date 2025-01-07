@@ -15,12 +15,15 @@
         android:theme="@style/Theme.Login"
         tools:targetApi="31">
         <activity
-            android:name=".ProductDetailsActivity"
+            android:name=".Editar_Perfil"
             android:exported="false" />
-        <!-- BaseActivity está configurada mas não é a principal -->
+        <activity
+            android:name=".ProductDetailsActivity"
+            android:exported="false" /> <!-- BaseActivity está configurada mas não é a principal -->
         <activity
             android:name=".BaseActivity"
-            android:exported="false" /> <!-- MainActivity deve ser a principal -->
+            android:exported="false" />
+
         <activity
             android:name=".MainActivity"
             android:exported="false" />

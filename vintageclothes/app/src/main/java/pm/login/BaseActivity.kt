@@ -1,5 +1,6 @@
 package pm.login
 
+import UserFragment
 import android.os.Bundle
 import android.util.Log
 import android.view.MenuItem
@@ -11,11 +12,7 @@ import pm.login.fragments.CarrinhoFragment
 import pm.login.fragments.HomeFragment
 import pm.login.fragments.LojaFragment
 
-import pm.login.fragments.UserFragment
-
 open class BaseActivity : AppCompatActivity() {
-
-
 
     private val binding by lazy {
         ActivityBaseBinding.inflate(layoutInflater)
