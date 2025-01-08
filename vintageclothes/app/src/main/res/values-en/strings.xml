@@ -11,7 +11,16 @@
     <string name="text_dadospessoais">" Personal data"</string>
     <string name="text_telefone">Telephone</string>
     <string name="text_idioma">Change language</string>
+    <string name="text_alterardados">change data</string>
+    <string name="text_salvar">Save</string>
     <string name="text_produtos">Our products</string>
     <string name="text_bemvindo">Welcome</string>
+    <string name="text_detalhesproduto">Product Details</string>
+    <string name="text_adicionarcarrinho">Add to Cart</string>
+    <string name="text_maisvendidos">Best Sellers</string>
+    <string name="text_ColeçãoOutono">Autumn Collection</string>
+    <string name="text_Finalizarcompra">Complete Purchase</string>
     <string name="text_morada">Household</string>
+    <string name="text_minhasenco">My orders</string>
+
 </resources>

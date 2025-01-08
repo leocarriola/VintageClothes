@@ -1,35 +1,36 @@
-<!-- item_produto_home.xml -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:background="#fff"
+    android:background="@drawable/rounded_background"
     android:layout_marginRight="5dp"
     android:layout_marginLeft="5dp"
-    android:padding="8dp">
+    android:padding="8dp"
+    android:elevation="4dp"
+   >
 
     <!-- Imagem do produto -->
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:src="@drawable/logo2" />
+<ImageView
+android:id="@+id/imageView"
+android:layout_width="100dp"
+android:layout_height="100dp"
+android:src="@drawable/logo2" />
 
     <!-- Nome do produto -->
-    <TextView
-        android:id="@+id/productName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Produto Exemplo"
-        android:textSize="14sp"
-        android:paddingTop="8dp" />
+<TextView
+android:id="@+id/productName"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="Produto Exemplo"
+android:textSize="14sp"
+android:paddingTop="8dp" />
 
     <!-- Preço do produto -->
-    <TextView
-        android:id="@+id/productPrice"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="0.00 €"
-        android:textSize="12sp"
-        android:paddingTop="4dp" />
-</LinearLayout>
+<TextView
+android:id="@+id/productPrice"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="0.00 €"
+android:textSize="12sp"
+android:paddingTop="4dp" />
+    </LinearLayout>

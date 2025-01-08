@@ -3,5 +3,11 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="dark_gray">#A9A9A9</color> <!-- Um cinza escuro -->
+    <!-- Definição da cor primária -->
+    <color name="colorPrimary">#6200EE</color> <!-- Substitua pela cor desejada -->
+    <color name="colorPrimaryDark">#3700B3</color>
+    <color name="colorAccent">#03DAC5</color>
+    <color name="light_gray">#D3D3D3</color>
 
 </resources>
+

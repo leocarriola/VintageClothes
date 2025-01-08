@@ -15,7 +15,6 @@
         android:scaleType="centerInside" />
 
     <!-- Dados pessoais com fundo branco e bordas arredondadas -->
-
     <LinearLayout
         android:layout_width="290dp"
         android:layout_height="wrap_content"
@@ -54,7 +53,6 @@
             android:text="Email" />
 
         <TextView
-
             android:id="@+id/textMorada"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -62,47 +60,62 @@
             android:text="@string/text_morada" />
     </LinearLayout>
 
-
-    <!-- Container para os botões, para centralizar -->
+    <!-- Container para os botões -->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
+        android:layout_height="326dp"
+        android:layout_marginBottom="160dp"
         android:gravity="center"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="160dp">
+        android:orientation="vertical">
 
-        <!-- Botão para alterar dados -->
+        <!-- Botões Alterar Dados, Mudar Idioma e Minhas Encomendas lado a lado -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <!-- Botão para alterar dados -->
+            <Button
+                android:id="@+id/buttonEditProfile"
+                android:layout_width="140dp"
+                android:layout_height="55dp"
+                android:layout_marginEnd="8dp"
+                android:backgroundTint="#0D0A0A"
+                android:text="@string/text_alterardados"
+                android:textColor="#FFFFFF" />
+
+            <!-- Botão para mudar idioma -->
+            <Button
+                android:id="@+id/buttonChangeLanguage"
+                android:layout_width="140dp"
+                android:layout_height="55dp"
+                android:backgroundTint="#0D0A0A"
+                android:text="@string/text_idioma"
+                android:textColor="#FFFFFF" />
+        </LinearLayout>
+
+        <!-- Botão Minhas Encomendas -->
         <Button
-            android:id="@+id/buttonEditProfile"
+            android:id="@+id/buttonOrders"
             android:layout_width="296dp"
             android:layout_height="48dp"
             android:layout_marginBottom="16dp"
-            android:background="@drawable/button_style"
-            android:text="Alterar Dados"
+            android:backgroundTint="#0D0A0A"
+            android:text="@string/text_minhasenco"
             android:textColor="#FFFFFF" />
 
 
-        <!-- Botão para mudar idioma -->
-        <Button
-            android:id="@+id/buttonChangeLanguage"
-            android:layout_width="296dp"
-            android:layout_height="48dp"
-            android:text="@string/text_idioma"
-            android:textColor="#FFFFFF"
-            android:background="@drawable/button_style"
-            android:backgroundTint="#000000"
-            android:layout_marginBottom="16dp" />
 
         <!-- Botão de logout -->
         <Button
             android:id="@+id/buttonLogout"
             android:layout_width="296dp"
             android:layout_height="48dp"
-            android:background="@drawable/button_style"
-            android:backgroundTint="#000000"
+            android:layout_marginTop="100dp"
+            android:backgroundTint="#0D0A0A"
             android:text="Logout"
             android:textColor="#FFFFFF" />
-
     </LinearLayout>
 </LinearLayout>

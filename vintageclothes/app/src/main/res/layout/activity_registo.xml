@@ -78,12 +78,14 @@
 
         <Button
             android:id="@+id/buttonRegistar"
-            android:layout_width="276dp"
-            android:layout_height="67dp"
+            android:layout_width="100dp"
+            android:layout_height="54dp"
+            android:layout_gravity="center"
             android:layout_marginTop="8dp"
-            android:background="@drawable/button_background"
-            android:backgroundTint="#000000"
+
+            android:backgroundTint="#0D0A0A"
             android:padding="14dp"
+
             android:text="Registrar"
             android:textColor="#FFFFFF" />
 

@@ -34,6 +34,16 @@ class UserFragment : Fragment() {
             startActivity(intent)
         }
 
+        // Configura o botão de editar
+        val buttonEditMinhasenc = view.findViewById<Button>(R.id.buttonOrders)
+        buttonEditMinhasenc.setOnClickListener {
+            // Navegar para o MinhasencFragment
+            requireActivity().supportFragmentManager.beginTransaction()
+                .replace(R.id.content_frame, MinhasencFragment()) // Substitua pelo ID correto do container de fragmentos
+                .commit()
+        }
+
+
         // Recupera as informações do usuário a partir das SharedPreferences
         val sharedPref = requireActivity().getSharedPreferences("pmLogin", Context.MODE_PRIVATE)
         val userName = sharedPref.getString("nome", "User não encontrado") ?: "Usuário não encontrado"

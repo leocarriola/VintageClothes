@@ -21,6 +21,7 @@ class Editar_Perfil : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+
         // Inicializa o binding
         binding = ActivityEditarPerfilBinding.inflate(layoutInflater)
         setContentView(binding.root)

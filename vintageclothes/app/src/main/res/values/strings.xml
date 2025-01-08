@@ -14,6 +14,15 @@
     <string name="text_telefone">Telefone</string>
     <string name="text_morada">Morada</string>
     <string name="text_idioma">Mudar idioma</string>
+    <string name="text_alterardados">Alterar dados</string>
+    <string name="text_salvar">Salvar</string>
     <string name="text_produtos">Os nossos produtos</string>
+    <string name="text_detalhesproduto">Detalhes do Produto</string>
+    <string name="text_adicionarcarrinho">Adicionar ao Carrinho</string>
+    <string name="text_maisvendidos">Mais Vendidos</string>
+    <string name="text_ColeçãoOutono">Coleção Outono</string>
+    <string name="text_Finalizarcompra">Finalizar Compra</string>
+    <string name="text_minhasenco">Minhas encomendas</string>
+
     <string name="hint_logout" translatable="false">Logout</string>
 </resources>

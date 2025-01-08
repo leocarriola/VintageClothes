@@ -1,6 +1,7 @@
 package pm.login.fragments
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -18,6 +19,7 @@ import com.android.volley.toolbox.Volley
 import org.json.JSONArray
 import org.json.JSONException
 import org.json.JSONObject
+import pm.login.ProductDetailsActivity
 import pm.login.Produto
 import pm.login.ProdutoHomeAdapter
 import pm.login.R
@@ -91,11 +93,8 @@ class HomeFragment : Fragment() {
                         adapterMaisVendidos = ProdutoHomeAdapter(
                             maisVendidos,
                             onItemClick = { produto ->
-                                Toast.makeText(
-                                    requireContext(),
-                                    "Produto clicado: ${produto.produtoNome}",
-                                    Toast.LENGTH_SHORT
-                                ).show()
+                                // Chama a função para abrir os detalhes do produto
+                                abrirDetalhesProduto(produto)
                             }
                         )
                         recyclerViewMaisVendidos.adapter = adapterMaisVendidos
@@ -107,11 +106,8 @@ class HomeFragment : Fragment() {
                         adapterColecaoOutono = ProdutoHomeAdapter(
                             colecaoOutonoSemDuplicatas,
                             onItemClick = { produto ->
-                                Toast.makeText(
-                                    requireContext(),
-                                    "Produto clicado: ${produto.produtoNome}",
-                                    Toast.LENGTH_SHORT
-                                ).show()
+                                // Chama a função para abrir os detalhes do produto
+                                abrirDetalhesProduto(produto)
                             }
                         )
                         recyclerViewColecaoOutono.adapter = adapterColecaoOutono
@@ -140,12 +136,6 @@ class HomeFragment : Fragment() {
 
         requestQueue.add(request)
     }
-
-
-
-
-
-
 
     private fun parseProdutos(response: JSONObject): List<Produto> {
         val produtos = mutableListOf<Produto>()
@@ -188,10 +178,19 @@ class HomeFragment : Fragment() {
         return produtos
     }
 
+    private fun abrirDetalhesProduto(produto: Produto) {
+        // Log do ID do produto que está sendo passado
+        Log.d("AbrirDetalhesProduto", "ID do produto: ${produto.idProduto}")
+
+        // Navegar para a tela de detalhes do produto
+        val intent = Intent(requireContext(), ProductDetailsActivity::class.java)
+        intent.putExtra("id_produto", produto.idProduto.toInt())
+        startActivity(intent)
+    }
+
     override fun onDestroyView() {
         super.onDestroyView()
         // Cancela todas as requisições pendentes quando o fragmento é destruído
         requestQueue.cancelAll { true }
     }
 }
-

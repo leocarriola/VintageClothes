@@ -36,6 +36,7 @@ android {
     }
 }
 
+
 dependencies {
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
@@ -48,6 +49,8 @@ dependencies {
 
     implementation (libs.glide)
     implementation(libs.androidx.junit.ktx)
+    implementation(libs.firebase.crashlytics.buildtools)
+    implementation(libs.androidx.material3.android)
 
 
 }
