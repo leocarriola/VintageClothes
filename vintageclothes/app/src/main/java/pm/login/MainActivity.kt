@@ -94,12 +94,14 @@ class MainActivity : AppCompatActivity() {
                             val idUser = response.getInt("id_user")
                             val telefone = response.getInt("telefone")
                             val morada = response.getString("morada")
+                            val email = response.getString("email")
 
 
                             val sharedPref = getSharedPreferences("pmLogin", MODE_PRIVATE)
                             sharedPref.edit().apply {
                                 putBoolean("login", true)
                                 putString("nome", nome)
+                                putString("email", email)
                                 putInt("id_user", idUser)
                                 putInt("telefone", telefone)
                                 putString("morada", morada)

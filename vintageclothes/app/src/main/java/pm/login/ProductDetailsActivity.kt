@@ -2,6 +2,7 @@ package pm.login
 
 import android.os.Bundle
 import android.util.Log
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
@@ -20,20 +21,23 @@ class ProductDetailsActivity : AppCompatActivity() {
     private var productDescription: TextView? = null
     private var productPrice: TextView? = null
     private var backArrow: ImageView? = null
+    private var addToCartButton: Button? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_product_details)
 
+        // Inicializar os elementos da UI
         productImage = findViewById(R.id.product_image)
         productName = findViewById(R.id.product_name)
         productDescription = findViewById(R.id.product_description)
         productPrice = findViewById(R.id.product_price)
         backArrow = findViewById(R.id.back_arrow)
+        addToCartButton = findViewById(R.id.add_to_cart_button)
 
-        // Configurar a ação de voltar ao clicar na seta
+        // Configurar a ação de voltar
         backArrow?.setOnClickListener {
-            finish() // Encerra esta atividade e volta para a anterior
+            finish()
         }
 
         // Obter o ID do produto do Intent
@@ -46,6 +50,21 @@ class ProductDetailsActivity : AppCompatActivity() {
             Toast.makeText(this, "Produto inválido!", Toast.LENGTH_SHORT).show()
             finish()
         }
+
+        // Configurar a ação do botão Adicionar ao Carrinho
+        addToCartButton?.setOnClickListener {
+            addToCart(productId)
+        }
+    }
+
+    // Método para adicionar o produto ao carrinho
+    private fun addToCart(productId: Int) {
+        // Exemplo: exibir uma mensagem Toast
+        Toast.makeText(this, "Produto $productId adicionado ao carrinho!", Toast.LENGTH_SHORT).show()
+
+        // Você pode implementar aqui a lógica para adicionar o produto
+        // ao carrinho, como salvar em um banco de dados local ou enviar
+        // para uma API de carrinho de compras.
     }
 
     // URL base para imagens

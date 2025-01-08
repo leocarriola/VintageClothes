@@ -24,8 +24,10 @@ import pm.login.R
 
 class HomeFragment : Fragment() {
 
-    private lateinit var recyclerView: RecyclerView
-    private lateinit var adapter: ProdutoHomeAdapter
+    private lateinit var recyclerViewMaisVendidos: RecyclerView
+    private lateinit var recyclerViewColecaoOutono: RecyclerView
+    private lateinit var adapterMaisVendidos: ProdutoHomeAdapter
+    private lateinit var adapterColecaoOutono: ProdutoHomeAdapter
     private lateinit var requestQueue: RequestQueue
 
     override fun onCreateView(
@@ -35,10 +37,12 @@ class HomeFragment : Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_home, container, false)
 
-        // Configura o RecyclerView
-        recyclerView = view.findViewById(R.id.recyclerViewProdutos)
-        recyclerView.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+        // Configura os RecyclerViews
+        recyclerViewMaisVendidos = view.findViewById(R.id.recyclerViewMaisVendidos)
+        recyclerViewMaisVendidos.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
 
+        recyclerViewColecaoOutono = view.findViewById(R.id.recyclerViewColecaoOutono)
+        recyclerViewColecaoOutono.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
 
         // Atualiza a mensagem de boas-vindas com o nome do user
         val welcomeTextView = view.findViewById<TextView>(R.id.home_text)
@@ -68,20 +72,54 @@ class HomeFragment : Fragment() {
                     Log.d("CarregarProdutos", "Resposta recebida: $response")
 
                     val produtos = parseProdutos(response)
-                    adapter = ProdutoHomeAdapter(
-                        produtos,
-                        onItemClick = { produto ->
-                            Toast.makeText(
-                                requireContext(),
-                                "Produto clicado: ${produto.produtoNome}",
-                                Toast.LENGTH_SHORT
-                            ).show()
-                        }
-                    )
 
-                    recyclerView.adapter = adapter
+                    // Para "Mais Vendidos", você pega os 6 primeiros produtos, sem remover duplicatas
+                    val maisVendidos = produtos.take(6) // Pegando os 6 produtos conforme a resposta
+                    Log.d("CarregarProdutos", "Mais Vendidos: ${maisVendidos.size} produtos")
+
+                    // Para "Coleção Outono", filtra os produtos corretamente
+                    val colecaoOutono = produtos.filter { it.produtoNome.contains("Sweatshirt", true) || it.produtoNome.contains("Casaco", true) }
+
+                    // Sem aplicar distinctBy se não houver duplicatas
+                    val colecaoOutonoSemDuplicatas = colecaoOutono.take(6) // Pegando 6 produtos sem duplicatas
+
+                    Log.d("CarregarProdutos", "Coleção Outono: ${colecaoOutonoSemDuplicatas.size} produtos")
+                    Log.d("CarregarProdutos", "Produtos da Coleção Outono (sem duplicatas): $colecaoOutonoSemDuplicatas")
+
+                    // Adicionando os adaptadores nos RecyclerViews
+                    if (maisVendidos.isNotEmpty()) {
+                        adapterMaisVendidos = ProdutoHomeAdapter(
+                            maisVendidos,
+                            onItemClick = { produto ->
+                                Toast.makeText(
+                                    requireContext(),
+                                    "Produto clicado: ${produto.produtoNome}",
+                                    Toast.LENGTH_SHORT
+                                ).show()
+                            }
+                        )
+                        recyclerViewMaisVendidos.adapter = adapterMaisVendidos
+                    } else {
+                        Log.d("CarregarProdutos", "Nenhum produto em 'Mais Vendidos'")
+                    }
+
+                    if (colecaoOutonoSemDuplicatas.isNotEmpty()) {
+                        adapterColecaoOutono = ProdutoHomeAdapter(
+                            colecaoOutonoSemDuplicatas,
+                            onItemClick = { produto ->
+                                Toast.makeText(
+                                    requireContext(),
+                                    "Produto clicado: ${produto.produtoNome}",
+                                    Toast.LENGTH_SHORT
+                                ).show()
+                            }
+                        )
+                        recyclerViewColecaoOutono.adapter = adapterColecaoOutono
+                    } else {
+                        Log.d("CarregarProdutos", "Nenhum produto em 'Coleção Outono'")
+                    }
+
                 } catch (e: JSONException) {
-                    // Log de erro caso o JSON não seja processado corretamente
                     Log.e("CarregarProdutos", "Erro ao processar o JSON: ${e.message}", e)
                     Toast.makeText(
                         requireContext(),
@@ -91,7 +129,6 @@ class HomeFragment : Fragment() {
                 }
             },
             { error ->
-                // Log de erro na requisição
                 Log.e("CarregarProdutos", "Erro ao carregar produtos: ${error.message}", error)
                 Toast.makeText(
                     requireContext(),
@@ -104,24 +141,37 @@ class HomeFragment : Fragment() {
         requestQueue.add(request)
     }
 
+
+
+
+
+
+
     private fun parseProdutos(response: JSONObject): List<Produto> {
         val produtos = mutableListOf<Produto>()
-
-        // Extraímos o objeto 'data' que contém as listas
         val data = response.optJSONObject("data") ?: return produtos
-
-        // Acessa os arrays 'mais_vendidos' e 'colecao_outono' diretamente
         val maisVendidos = data.optJSONArray("mais_vendidos") ?: JSONArray()
         val colecaoOutono = data.optJSONArray("colecao_outono") ?: JSONArray()
 
-        // Processar o array 'mais_vendidos'
-        for (i in 0 until maisVendidos.length()) {
-            val produtoJson = maisVendidos.optJSONObject(i)
+        // Adicionando produtos ao array
+        produtos.addAll(parseCategoria(maisVendidos))
+        produtos.addAll(parseCategoria(colecaoOutono))
+
+        return produtos
+    }
+
+    private fun parseCategoria(array: JSONArray): List<Produto> {
+        val produtos = mutableListOf<Produto>()
+        Log.d("CarregarProdutos", "Parsing categoria com ${array.length()} itens.") // Log para verificar o tamanho do array
+        for (i in 0 until array.length()) {
+            val produtoJson = array.optJSONObject(i)
             produtoJson?.let {
                 val id = it.optString("id_produto", null)?.toIntOrNull()
                 val nome = it.optString("produto_nome", null)
                 val preco = it.optString("preco", "0.00")
                 val imagem = it.optString("imagem", "")
+
+                Log.d("CarregarProdutos", "Produto processado: $nome") // Log para verificar cada produto processado
 
                 if (id != null && !nome.isNullOrEmpty()) {
                     val produto = Produto(
@@ -131,41 +181,10 @@ class HomeFragment : Fragment() {
                         imagem = imagem
                     )
                     produtos.add(produto)
-                } else {
-                    Log.e(
-                        "CarregarProdutos",
-                        "Erro: Produto com ID ou nome ausente no array 'mais_vendidos'."
-                    )
                 }
             }
         }
-
-        // Processar o array 'colecao_outono' de forma similar
-        for (i in 0 until colecaoOutono.length()) {
-            val produtoJson = colecaoOutono.optJSONObject(i)
-            produtoJson?.let {
-                val id = it.optString("id_produto", null)?.toIntOrNull()
-                val nome = it.optString("produto_nome", null)
-                val preco = it.optString("preco", "0.00")
-                val imagem = it.optString("imagem", "")
-
-                if (id != null && !nome.isNullOrEmpty()) {
-                    val produto = Produto(
-                        idProduto = id.toString(),
-                        produtoNome = nome,
-                        preco = preco,
-                        imagem = imagem
-                    )
-                    produtos.add(produto)
-                } else {
-                    Log.e(
-                        "CarregarProdutos",
-                        "Erro: Produto com ID ou nome ausente no array 'colecao_outono'."
-                    )
-                }
-            }
-        }
-
+        Log.d("CarregarProdutos", "Número de produtos processados: ${produtos.size}") // Log para contar os produtos processados
         return produtos
     }
 
@@ -175,3 +194,4 @@ class HomeFragment : Fragment() {
         requestQueue.cancelAll { true }
     }
 }
+

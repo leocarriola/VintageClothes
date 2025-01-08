@@ -69,7 +69,36 @@ class UserFragment : Fragment() {
 
         return view
     }
+    override fun onResume() {
+        super.onResume()
+        val sharedPref = activity?.getSharedPreferences("pmLogin", Context.MODE_PRIVATE)
+        val userName = sharedPref?.getString("nome", "User não encontrado") ?: "Usuário não encontrado"
+        val telefone = sharedPref?.getInt("telefone", 123)
+        val morada = sharedPref?.getString("morada", "Morada não encontrada") ?: "Morada não encontrada"
+        val email = sharedPref?.getString("email", "Email não encontrado") ?: "Email não encontrado"
 
+        // Atualiza os TextViews com as informações
+        val nameTextView = view?.findViewById<TextView>(R.id.textNome)
+        if (nameTextView != null) {
+            nameTextView.text = userName
+        }
+
+        val telTextView = view?.findViewById<TextView>(R.id.textTelefone)
+        if (telTextView != null) {
+            telTextView.text = "${getString(R.string.text_telefone)}: $telefone"
+        }
+
+        val emailTextView = view?.findViewById<TextView>(R.id.textEmail)
+        if (emailTextView != null) {
+            emailTextView.text = "Email: $email"
+        }
+
+        val moradaTextView = view?.findViewById<TextView>(R.id.textMorada)
+        if (moradaTextView != null) {
+            moradaTextView.text = "${getString(R.string.text_morada)}: $morada"
+        }
+
+    }
     private fun performLogout() {
         // Limpa os dados do usuário armazenados em SharedPreferences
         val sharedPref = requireActivity().getSharedPreferences("pmLogin", Context.MODE_PRIVATE)
