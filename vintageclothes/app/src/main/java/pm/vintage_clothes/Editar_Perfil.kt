@@ -1,4 +1,4 @@
-package pm.login
+package pm.vintage_clothes
 
 import android.content.Context
 import android.content.SharedPreferences

@@ -1,4 +1,4 @@
-package pm.login
+package pm.vintage_clothes
 
 import UserFragment
 import android.os.Bundle
@@ -7,10 +7,11 @@ import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import pm.login.R
 import pm.login.databinding.ActivityBaseBinding
-import pm.login.fragments.CarrinhoFragment
-import pm.login.fragments.HomeFragment
-import pm.login.fragments.LojaFragment
+import pm.vintage_clothes.fragments.CarrinhoFragment
+import pm.vintage_clothes.fragments.HomeFragment
+import pm.vintage_clothes.fragments.LojaFragment
 
 open class BaseActivity : AppCompatActivity() {
 

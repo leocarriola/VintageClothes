@@ -1,4 +1,4 @@
-package pm.login
+package pm.vintage_clothes
 
 data class CartItem(
     val id: Int,

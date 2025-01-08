@@ -1,3 +1,4 @@
+
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
@@ -7,9 +8,9 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
 import androidx.fragment.app.Fragment
-import pm.login.Editar_Perfil
-import pm.login.MainActivity
 import pm.login.R
+import pm.vintage_clothes.Editar_Perfil
+import pm.vintage_clothes.MainActivity
 import java.util.Locale
 
 class UserFragment : Fragment() {

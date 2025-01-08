@@ -1,4 +1,4 @@
-package pm.login.adapters
+package pm.vintage_clothes.adapters
 
 import android.view.LayoutInflater
 import android.view.View
@@ -7,8 +7,8 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import pm.login.CartItem
 import pm.login.R
+import pm.vintage_clothes.CartItem
 
 class CartAdapter(
     private val cartItems: List<CartItem>, // Lista de itens do carrinho

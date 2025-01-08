@@ -1,4 +1,4 @@
-package pm.login
+package pm.vintage_clothes
 
 import android.content.Context
 import android.os.Bundle
@@ -16,7 +16,8 @@ import com.android.volley.toolbox.Volley
 import com.bumptech.glide.Glide
 import org.json.JSONException
 import org.json.JSONObject
-import pm.login.utils.CartManager
+import pm.login.R
+import pm.vintage_clothes.utils.CartManager
 
 class ProductDetailsActivity : AppCompatActivity() {
 

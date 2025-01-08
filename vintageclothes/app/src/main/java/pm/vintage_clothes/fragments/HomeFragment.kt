@@ -1,4 +1,4 @@
-package pm.login.fragments
+package pm.vintage_clothes.fragments
 
 import android.content.Context
 import android.content.Intent
@@ -19,10 +19,10 @@ import com.android.volley.toolbox.Volley
 import org.json.JSONArray
 import org.json.JSONException
 import org.json.JSONObject
-import pm.login.ProductDetailsActivity
-import pm.login.Produto
-import pm.login.ProdutoHomeAdapter
 import pm.login.R
+import pm.vintage_clothes.ProductDetailsActivity
+import pm.vintage_clothes.Produto
+import pm.vintage_clothes.ProdutoHomeAdapter
 
 class HomeFragment : Fragment() {
 

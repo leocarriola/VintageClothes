@@ -1,4 +1,4 @@
-package pm.login
+package pm.vintage_clothes
 
 import android.content.Context
 import android.content.Intent
@@ -12,8 +12,9 @@ import com.android.volley.Request
 import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
 import org.json.JSONObject
+import pm.login.R
 import pm.login.databinding.ActivityMainBinding
-import pm.login.fragments.HomeFragment
+import pm.vintage_clothes.fragments.HomeFragment
 
 
 class MainActivity : AppCompatActivity() {

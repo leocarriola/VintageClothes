@@ -1,8 +1,8 @@
-package pm.login.utils
+package pm.vintage_clothes.utils
 
 import android.content.Context
 import android.content.SharedPreferences
-import pm.login.CartItem
+import pm.vintage_clothes.CartItem
 
 class CartManager(context: Context) {
 

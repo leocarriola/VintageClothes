@@ -1,4 +1,4 @@
-package pm.login.fragments
+package pm.vintage_clothes.fragments
 
 import MinhasencFragment
 import android.content.Context
@@ -19,10 +19,10 @@ import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.Volley
 import org.json.JSONArray
 import org.json.JSONObject
-import pm.login.CartItem
 import pm.login.R
-import pm.login.adapters.CartAdapter
-import pm.login.utils.CartManager
+import pm.vintage_clothes.CartItem
+import pm.vintage_clothes.adapters.CartAdapter
+import pm.vintage_clothes.utils.CartManager
 
 class CarrinhoFragment : Fragment() {
 

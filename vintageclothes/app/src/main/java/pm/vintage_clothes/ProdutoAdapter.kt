@@ -1,4 +1,4 @@
-package pm.login
+package pm.vintage_clothes
 
 import android.view.LayoutInflater
 import android.view.View
@@ -7,6 +7,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import pm.login.R
 
 // Data class que representa um produto
 data class Produto(
